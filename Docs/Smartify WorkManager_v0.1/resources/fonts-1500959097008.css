@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Windows10-Icons-Regular";
+  src: url("../fonts/Windows10-Icons-Regular.eot?#iefix") format("embedded-opentype"), 
+       url("../fonts/Windows10-Icons-Regular.woff") format("woff"), 
+       url("../fonts/Windows10-Icons-Regular.ttf")  format("truetype"),
+       url("../fonts/Windows10-Icons-Regular.svg#svgFontName") format("svg");
+}

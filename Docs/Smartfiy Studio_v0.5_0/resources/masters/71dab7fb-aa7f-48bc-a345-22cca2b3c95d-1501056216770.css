@@ -1,0 +1,22 @@
+#m-71dab7fb-aa7f-48bc-a345-22cca2b3c95d #m-71dab7fb-Dynamic_Panel_1 {
+  position: absolute;
+  top: 324px;
+  left: 404px;
+}
+#m-71dab7fb-aa7f-48bc-a345-22cca2b3c95d #m-71dab7fb-Panel_1 {
+  width: 225px;
+  height: 247px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#m-71dab7fb-aa7f-48bc-a345-22cca2b3c95d #m-71dab7fb-Panel_1 .verticalalign {
+  vertical-align: top;
+}
+#m-71dab7fb-aa7f-48bc-a345-22cca2b3c95d.master > #loadMark {
+  width: 1px;
+  visibility: hidden;
+  display: none;
+}

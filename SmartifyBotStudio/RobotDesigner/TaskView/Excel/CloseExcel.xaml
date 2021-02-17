@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="SmartifyBotStudio.RobotDesigner.TaskView.Excel.CloseExcel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SmartifyBotStudio.RobotDesigner.TaskView.Web_Automation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"  Background="DimGray"
+             Height="550" Width="580" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.RadioButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="1.2*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon x:Name="imp_delete" Grid.Column="0" HorizontalAlignment="Center" Width="45" Height="40" VerticalAlignment="Center"  Kind="FileExcel"  Foreground="Orange"/>
+            <StackPanel Grid.Column="1">
+                <TextBlock Foreground="White" Text="Close Excel File" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" FontSize="14" />
+                <TextBlock Foreground="White" TextWrapping="Wrap" Width="402" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        This action launches a new Excel Insatance and opens an Excel Document.
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TabControl HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="565" Margin="12,0,0,0" Background="{x:Null}">
+                <TabItem Header="Basic">
+
+                    <Grid Margin="0,-28,0,1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+
+
+
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <!--<Rectangle Fill="#FFFDB10F" HorizontalAlignment="Left" Height="2" Margin="149,0,0,10" VerticalAlignment="Bottom" Width="334" />
+                            <Rectangle Fill="#FFFDB10F" HorizontalAlignment="Left" Height="2" Margin="6,0,0,10" VerticalAlignment="Bottom" Width="31" />-->
+                            <TextBlock Foreground="White" Text="Task Instruct" HorizontalAlignment="Left" Margin="49,35,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="33" Width="106"/>
+
+                        </Grid>
+                        <Grid Margin="0,79,0,45" Grid.RowSpan="2">
+                            <Label Foreground="White" FontWeight="Bold"  Content="Excel Instance : " Margin="42,5,411,-5"></Label>
+                            <ComboBox  Foreground="White" FontWeight="Bold" SelectedIndex="0" Name="excelInstanceCombo" Margin="148,0,107,0" Height="28" VerticalAlignment="Top">
+
+                            </ComboBox>
+
+                            <Button Grid.Column="0" x:Name="file_image_i" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="461,4,0,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="0,32,0,5">
+                            <Label  FontWeight="Bold" Foreground="White" Content="Before closing Excel : " Margin="9,9,411,-9">
+
+                            </Label>
+                            <ComboBox SelectedIndex="0" Foreground="White" Name="beforeClosingCombo" Margin="148,5,108,0" Height="28" VerticalAlignment="Top">
+                                <ComboBoxItem Name="doNotSave">Do not save document</ComboBoxItem>
+                                <ComboBoxItem Name="save">Save Document</ComboBoxItem>
+                                <ComboBoxItem Name="saveAs">Save document as</ComboBoxItem>
+                            </ComboBox>
+                            <Button Grid.Column="0" x:Name="file_image_" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="461,11,0,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                        </Grid>
+                        <Grid Margin="0,68,0,77" Grid.RowSpan="4" Grid.Row="1"   >
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=saveAs, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Label Content="Document Format : " Foreground="White" FontWeight="Bold" Margin="19,14,412,38"></Label>
+                            <ComboBox Height="28" SelectedIndex="0" Name="docFormatCombo" Foreground="White" Margin="147,9,109,0"  VerticalAlignment="Top">
+                                <ComboBoxItem>Default (From Extension)</ComboBoxItem>
+                                <ComboBoxItem>Excel Workbook (.xlsx)</ComboBoxItem>
+                                <ComboBoxItem>Excel Workbook Macro Enabled (.xlsm)</ComboBoxItem>
+                                <ComboBoxItem>Excel 97-2003 Workbook(.xls)</ComboBoxItem>
+                                <ComboBoxItem>Web Page (.html)</ComboBoxItem>
+                                <ComboBoxItem>Excel Template (.xltx)</ComboBoxItem>
+                                <ComboBoxItem>Excel Template Macro Enabled (.xltm)</ComboBoxItem>
+                                <ComboBoxItem>Excel 97-2003 Template (.xlt)</ComboBoxItem>
+                                <ComboBoxItem>Text (.txt)</ComboBoxItem>
+                                <ComboBoxItem>Unicode Text (.txt)</ComboBoxItem>
+                                <ComboBoxItem>Text Macintosh(.txt)</ComboBoxItem>
+                                <ComboBoxItem>Text Dos (.txt)</ComboBoxItem>
+                                <ComboBoxItem>XML Spreadsheet (.xml)</ComboBoxItem>
+                                <ComboBoxItem>Excel 95 (.xls)</ComboBoxItem>
+                                <ComboBoxItem>CSV (.csv)</ComboBoxItem>
+                                <ComboBoxItem>DIF (.dif)</ComboBoxItem>
+                                <ComboBoxItem>SYLK (.slk)</ComboBoxItem>
+                                <ComboBoxItem>Excel Add-In (.xlam)</ComboBoxItem>
+                                <ComboBoxItem>Excel 97-2003 Add-In (.xla)</ComboBoxItem>
+                                <ComboBoxItem>Strict Open XML Workbook (.xlsx)</ComboBoxItem>
+                                <ComboBoxItem>OpenDocument Spreadsheet (.ods)</ComboBoxItem>
+
+                            </ComboBox>
+                            <Button Grid.Column="0" x:Name="file_image" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="461,21,0,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Label Foreground="White" FontWeight="Bold" Content="Document path : " Margin="31,52,421,-16" ></Label>
+                            <TextBox Foreground="White" Name="documentPath_text" Margin="147,52,109,0" Height="25" VerticalAlignment="Top" ></TextBox>
+                            <Button Grid.Column="0" x:Name="destination_image_i" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="461,55,0,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Button x:Name="destination_img_setting" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="489,55,0,0">
+                                <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Browse Files" Name="file_image_folder"   Click="btnOpenFolder_Click" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="516,55,0,0">
+                                <materialDesign:PackIcon Kind="Folder" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Label Foreground="White" Content="File Name : " FontWeight="Bold" Margin="62,86,412,14"></Label>
+                            <TextBox Height="31" Name="newFileName" Foreground="White" Margin="147,0,109,54" VerticalAlignment="Bottom" ></TextBox>
+                        </Grid>
+                        <Grid Grid.Row="3" Margin="0,74,0,-40"  Grid.RowSpan="2">
+
+
+                            <Label Foreground="White" Content="Variable Update" FontSize="14" FontWeight="Bold"></Label>
+                            <Label Foreground="White" Content="(this action does not provide any output.)" Height="41" VerticalAlignment="Top" Margin="190,42,0,0" ></Label>
+                        </Grid>
+
+
+
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Error Handling">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="15 0 15 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <CheckBox Foreground="White" Background="White" Grid.Row="0" x:Name="this_checkbox" Content="This action is Enabled" HorizontalAlignment="Left" Margin="0 0 0 10" VerticalAlignment="Center"/>
+            <Grid Grid.Row="1" VerticalAlignment="Bottom">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="more_button_Click" x:Name="more_button" Content="More Info" HorizontalAlignment="Left" Height="26" Width="118"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="ok_button_Click" x:Name="ok_button" Content="Save" HorizontalAlignment="Right" Margin="0 0 100 0" Height="26" Width="75"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btn_cancel_Click" x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Right" Height="26" Width="75"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

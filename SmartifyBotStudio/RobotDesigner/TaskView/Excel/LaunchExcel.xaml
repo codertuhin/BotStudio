@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="SmartifyBotStudio.RobotDesigner.TaskView.Excel.LaunchExcel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SmartifyBotStudio.RobotDesigner.TaskView.Web_Automation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"  Background="DimGray"
+             Height="500" Width="610" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.RadioButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="1.2*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon x:Name="imp_delete" Grid.Column="0" HorizontalAlignment="Center" Width="45" Height="40" VerticalAlignment="Center"  Kind="Delete"  Foreground="Orange"/>
+            <StackPanel Grid.Column="1">
+                <TextBlock Foreground="White" Text="Lanuch New Excel File" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" FontSize="14" />
+                <TextBlock Foreground="White" TextWrapping="Wrap" Width="402" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        This action launches a new Excel Insatance and opens an Excel Document.
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TabControl HorizontalAlignment="Left" Height="341" VerticalAlignment="Top" Width="590" Margin="12,0,0,0" Background="{x:Null}">
+                <TabItem Header="Basic">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.3*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1.3*"/>
+                            <RowDefinition Height="2.5*"/>
+
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <!--<Rectangle Fill="#FFFDB10F" HorizontalAlignment="Left" Height="2" Margin="149,0,0,10" VerticalAlignment="Bottom" Width="334" />
+                            <Rectangle Fill="#FFFDB10F" HorizontalAlignment="Left" Height="2" Margin="6,0,0,10" VerticalAlignment="Bottom" Width="31" />-->
+                            <TextBlock Foreground="White" Text="Task Instruct" HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="33" Width="106"/>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="2,5,10,48">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock FontWeight="Bold" Foreground="White" Text="Launch Excel :" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="0,6" Grid.Column="0" Margin="0,0,15,0" />
+                            <!--<TextBox Foreground="White" Grid.Column="1" VerticalAlignment="Top" x:Name="FilesToDelete_text" Margin="10 4 5 0"/>-->
+                            <ComboBox  SelectedIndex="0"  Foreground="White" x:Name="openExcelCombo" VerticalAlignment="Top"  FontSize="13"  Margin="154,0,93,0" Height="28" Grid.ColumnSpan="3">
+
+                                <ComboBoxItem x:Name="launchNewExcelCombo">Launch blank Excel File</ComboBoxItem>
+                                <ComboBoxItem x:Name="openExcelDocCombo">open the following document</ComboBoxItem>
+
+
+                            </ComboBox>
+
+
+
+
+                        </Grid>
+
+                        <Grid Grid.Row="1" HorizontalAlignment="Right" Width="484" Margin="0,45,10,0">
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=launchNewExcelCombo, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <TextBlock Padding="0,6" FontWeight="Bold" Foreground="White" Text="File Name :" Margin="-13,3,428,-3"></TextBlock>
+                            <TextBox Foreground="White"  Name="excelFileName_text" Margin="66,5,93,10" ></TextBox>
+                            <Button Grid.Column="0" x:Name="file_image_i" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="401,5,0,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Label FontWeight="Bold" Foreground="White" Content="Destination Folder : " Margin="-65,46,423,-46">
+
+                            </Label>
+                            <TextBox Name="destinationFolder_text" Text="" Foreground="White" Margin="65,44,94,-34"></TextBox>
+
+
+                            <Button Grid.Column="0" x:Name="destination_image_i" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="401,46,0,-29">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Button x:Name="destination_img_setting" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="429,46,0,-29">
+                                <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Browse Files" Name="file_image_folder"   Click="btnOpenFolder_Click" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="456,46,0,-29">
+                                <materialDesign:PackIcon Kind="Folder" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+
+
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="-9,48,9,40" Grid.RowSpan="2"  >
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=openExcelDocCombo, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <TextBlock Foreground="White" FontWeight="Bold" Text="Document Path : " Margin="58,0,423,0"></TextBlock>
+                            <TextBox Foreground="White" Name="opentExcelDoc_Text" Margin="165,0,94,33" Height="24" VerticalAlignment="Bottom"></TextBox>
+                            <Button Grid.Column="0" x:Name="file_image_" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="500,-2,0,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Button x:Name="file_image_setting" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="530,-2,0,0">
+                                <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Browse Files" Name="file_image_paper"  Click="btnOpenFiles_Click" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="561,-2,-3,0">
+                                <materialDesign:PackIcon Kind="File" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+
+                        </Grid>
+                        <Grid Grid.Row="3" Margin="0,2,0,10">
+                            <Label Foreground="White" FontSize="14" Content="Variable Update" FontWeight="Bold" Margin="0,18,390,49"></Label>
+                            <Label FontWeight="Bold"  Foreground="White" Content="Store Excel Instance into : " Margin="0,54,341,-18"></Label>
+                            <TextBox Foreground="White" Name="excelStoreVar_text" Margin="155,54,109,11"/>
+
+                        </Grid>
+                        <CheckBox Name="makevisible_checkBox" Foreground="White" FontWeight="Bold" Content="Make instance visible" HorizontalAlignment="Left" Margin="177,5,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+
+
+
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Error Handling">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="15 0 15 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <CheckBox Foreground="White" Background="White" Grid.Row="0" x:Name="this_checkbox" Content="This action is Enabled" HorizontalAlignment="Left" Margin="0 0 0 10" VerticalAlignment="Center"/>
+            <Grid Grid.Row="1" VerticalAlignment="Bottom">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="more_button_Click" x:Name="more_button" Content="More Info" HorizontalAlignment="Left" Height="26" Width="118"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="ok_button_Click" x:Name="ok_button" Content="Save" HorizontalAlignment="Right" Margin="0 0 100 0" Height="26" Width="75"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btn_cancel_Click" x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Right" Height="26" Width="75"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,144 @@
+{
+  "comments": [
+    {
+      "canvasID": "m-6f08728c-bfb0-4437-8ccf-51291d987c49",
+      "elementID": "m-Rectangle_10",
+      "canvasURL": "masters/6f08728c-bfb0-4437-8ccf-51291d987c49",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 1,
+      "parentCode": null,
+      "content": "This button shall launch the products listed in first menu and also provide open list of machines as a default.",
+      "timestamp": "1495500876363",
+      "date": "23 May 2017 10:54",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Text_9",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 2,
+      "parentCode": null,
+      "content": "This icon shall represent a cluster or group of machines that are ready to  deployed to production. The machine be allocated to cluster and be designed to provide security controls that be applied at once. In addition the machine should be able to have patches installed in a group with having to using individual access. The cloud should be define in a way that any system changes must display a set of notifications that clarify how each system shall operate.",
+      "timestamp": "1495500922157",
+      "date": "23 May 2017 10:55",
+      "fileName": "d46fbf23-9708-40b8-a519-92fd262b911e.png",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Image_124",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 3,
+      "parentCode": null,
+      "content": "Clicking this icon should allow the creation of a new group or team of machines",
+      "timestamp": "1495500964731",
+      "date": "23 May 2017 10:56",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Sever_Panel",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 4,
+      "parentCode": null,
+      "content": "This panel shall display the details of the machine in view or the group clicked on",
+      "timestamp": "1495501016363",
+      "date": "23 May 2017 10:56",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Image_158",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 5,
+      "parentCode": null,
+      "content": "On click should open a dialogue to create a new machine instance. This should be implemented using a typical VS DB with a 56MB space that can enble a typical user to change mode while still remaining in control of the data access and combinations of security locks that trigger how a system user interacts wiht the system.",
+      "timestamp": "1495501950922",
+      "date": "23 May 2017 11:12",
+      "fileName": "19c1529b-d13f-4487-a07f-33faaca28726.docx",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Image_13",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 6,
+      "parentCode": null,
+      "content": "Onclick shall referesh the instance and provide additional updates and machines",
+      "timestamp": "1495501994116",
+      "date": "23 May 2017 11:13",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Text_144",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 7,
+      "parentCode": null,
+      "content": "This shall add a new space or folder where other subfolders can be added.",
+      "timestamp": "1495586530798",
+      "date": "24 May 2017 10:42",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Image_6",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 8,
+      "parentCode": null,
+      "content": "Central database where all folders are stored",
+      "timestamp": "1495586582160",
+      "date": "24 May 2017 10:43",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Image_28",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 9,
+      "parentCode": null,
+      "content": "Can this folder hold files",
+      "timestamp": "1495586599785",
+      "date": "24 May 2017 10:43",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-d6ecc889-b86b-4a08-b470-459a73822b51",
+      "elementID": "m-Panel_9",
+      "canvasURL": "masters/d6ecc889-b86b-4a08-b470-459a73822b51",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 10,
+      "parentCode": null,
+      "content": "make panel scroll with more objects in list",
+      "timestamp": "1495586638227",
+      "date": "24 May 2017 10:43",
+      "fileName": "",
+      "isRead": true
+    }
+  ]
+}

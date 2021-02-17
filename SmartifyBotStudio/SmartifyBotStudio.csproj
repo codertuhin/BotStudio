@@ -1,0 +1,1296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A670055D-19EB-4708-8EC0-77D24EA91257}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartifyBotStudio</RootNamespace>
+    <AssemblyName>SmartifyBotStudio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Lboi-Tweetscotty-Twitter-bot.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveUp.Net, Version=2.1.41.0, Culture=neutral, PublicKeyToken=2ff270728258992b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Common, Version=2.1.41.0, Culture=neutral, PublicKeyToken=6cceae6a4844c51b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Dns, Version=2.1.41.0, Culture=neutral, PublicKeyToken=6fc67824e0089991, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Dns.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Groupware, Version=2.1.41.0, Culture=neutral, PublicKeyToken=db51b95d57ebfe25, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Groupware.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Imap4, Version=2.1.41.0, Culture=neutral, PublicKeyToken=9d424b1770e92b68, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Imap4.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Mail, Version=2.1.41.0, Culture=neutral, PublicKeyToken=851b9e39ef2572fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Nntp, Version=2.1.41.0, Culture=neutral, PublicKeyToken=01416978360a49a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Nntp.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.OpenPGP, Version=2.1.41.0, Culture=neutral, PublicKeyToken=0e094b86584219e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.OpenPGP.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Pop3, Version=2.1.41.0, Culture=neutral, PublicKeyToken=962567372c07b9fe, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Pop3.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Smtp, Version=2.1.41.0, Culture=neutral, PublicKeyToken=366752d00f09ae34, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Smtp.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.WhoIs, Version=2.1.41.0, Culture=neutral, PublicKeyToken=6b9afb81c1de5ed4, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.WhoIs.dll</HintPath>
+    </Reference>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Users\Softavion-2\Downloads\adodb\adodb.dll</HintPath>
+    </Reference>
+    <Reference Include="AE.Net.Mail, Version=1.7.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AE.Net.Mail.1.7.10.0\lib\net45\AE.Net.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.WPF.Controls, Version=7.9.0.0, Culture=neutral, PublicKeyToken=65042117d0a83cbc, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WPF.Metro, Version=7.9.0.0, Culture=neutral, PublicKeyToken=335804e47774a7d8, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WpfDock, Version=7.9.0.0, Culture=neutral, PublicKeyToken=adef513edc9ed778, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WpfEditors, Version=7.9.0.0, Culture=neutral, PublicKeyToken=cbba4a1563683cdb, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WpfRibbon, Version=7.9.0.0, Culture=neutral, PublicKeyToken=2037e151916410e7, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.6.8.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.8\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.6\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.6\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Mail, Version=3.0.18026.1647, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mail.dll.3.0.18026.1647\lib\net45\Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.0.1\lib\net45\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MimeKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.0.1\lib\net45\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.8.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.8.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Admin\Admin.xaml.cs">
+      <DependentUpon>Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin1.xaml.cs">
+      <DependentUpon>Admin1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Converters\IndexConverter.cs" />
+    <Compile Include="Helpers\DragDropListView\ListViewDragDropManager.cs" />
+    <Compile Include="Helpers\DragDropListView\DragAdorner.cs" />
+    <Compile Include="Helpers\DragDropListView\MouseUtilities.cs" />
+    <Compile Include="Helpers\Misc\CSVReader.cs" />
+    <Compile Include="Helpers\Misc\CSVWriter.cs" />
+    <Compile Include="Interfaces\IProjectModel.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RobotActionBase.cs" />
+    <Compile Include="Models\RobotDesignerProjectModel.cs" />
+    <Compile Include="OutputUserControl.xaml.cs">
+      <DependentUpon>OutputUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\Enums\RobotActionsEnum.cs" />
+    <Compile Include="RobotDesigner\Interfaces\ITask.cs" />
+    <Compile Include="RobotDesigner\RobotActionsListView.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\Else.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\ElseIf.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\EndIf.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\If.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\IfFileExists.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\IfFolderExists.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\IfImageExists.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\IfProcessExists.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\IfService.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Conditional\IfWindowExists.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DataBase\CloseSQLConnection.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DataBase\DataBaseConnectionManager.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DataBase\ExecuteSQLStatement.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DataBase\OleDbConnString.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DataBase\OleDbSchema.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskModel\DataBase\OpenSQLConnection.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DateTimeActions\AddToDateTime.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DateTimeActions\GetCurrentDateTime.cs" />
+    <Compile Include="RobotDesigner\TaskModel\DateTimeActions\SubtractDates.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Delay\DelayByTiming.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Email\GetMessages.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Email\ProcessMessage.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Email\SendMessages.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Excel\AddNewWorkSheet.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Excel\CloseExcel.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Excel\LaunchExcel.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Excel\ReadFromExcel.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Excel\SetActiveWorkSheet.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Excel\WriteToExcel.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\CopyFiles.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\DeleteFiles.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\GetFilePathPart.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\GetFilesinFolder.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\GetTemporaryFiles.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\MoveFiles.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\ReadFromCSVFile.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\ReadTextFromFile.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\RenameFiles.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\WriteTextToFile.cs" />
+    <Compile Include="RobotDesigner\TaskModel\File\WriteToCSVFile.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Flow Control\GoTo.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Flow Control\Label.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Loops\EndLoop.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Loops\ExitLoop.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Loops\ForEach.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Loops\LoopCondition.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Loops\Loop.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Loops\LoopConditionEnd.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Loops\LoopContinue.cs" />
+    <Compile Include="RobotDesigner\TaskModel\MessageBoxes\DisplayMessage.cs" />
+    <Compile Include="RobotDesigner\TaskModel\MessageBoxes\MessageBoxEx.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Mouse and Keyboard\BlockInput.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Mouse and Keyboard\MouseClick.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Mouse and Keyboard\MouseScroll.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Mouse and Keyboard\MoveMouse.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Mouse and Keyboard\PressReleaseKey.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Mouse and Keyboard\SetKeyState.cs" />
+    <Compile Include="RobotDesigner\TaskModel\TaskViewFrameUC.xaml.cs">
+      <DependentUpon>TaskViewFrameUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskModel\Text\ChangeTextCase.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\ChangeTextFormat.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\ChangeTextToNumber.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\CompareText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\ConverNumberToText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\ConvertDateTimeToText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\ConvertTextToDateTime.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\CutAndJoin.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\FindText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\GetSubText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\GetTextLength.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\JoinText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\ReplaceText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\ReverseText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\SplitText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Text\TrimText.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\AddTtemToList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\ClearList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\CreateNewList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\DecreaseVariable.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\DeleteList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\GetListLength.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\IncreaseVariable.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\MergeLists.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\RemoveDuplicateItemFromList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\RemoveItemFromList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\ReverseList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\SetVariable.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\SuffleList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\VariablesActions\TruncateNumber.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\AutomationBrowser.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\ClickOnWebPage.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\CloseIE.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\ExtractDataFromWeb.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\ExtractPageDetails.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\HoverOnWebObject.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\LaunchNewIE.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\PopulateTextFiedOnWeb.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\SetCheckBox.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\SetDropDownList.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\SetRadioButton.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\TakeScreenShotOfWebPage.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\WebDriverGenerator.cs" />
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\WebGeneratorSingleton.cs" />
+    <Compile Include="RobotDesigner\TaskView\Conditional\Else.xaml.cs">
+      <DependentUpon>Else.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\ElseIf.xaml.cs">
+      <DependentUpon>ElseIf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\EndIf.xaml.cs">
+      <DependentUpon>EndIf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\If.xaml.cs">
+      <DependentUpon>If.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\IfFileExists.xaml.cs">
+      <DependentUpon>IfFileExists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\IfFolderExists.xaml.cs">
+      <DependentUpon>IfFolderExists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\IfImageExists.xaml.cs">
+      <DependentUpon>IfImageExists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\IfProcessExists.xaml.cs">
+      <DependentUpon>IfProcessExists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\IfService.xaml.cs">
+      <DependentUpon>IfService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Conditional\IfWindowExists.xaml.cs">
+      <DependentUpon>IfWindowExists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\DataBase\CloseSQLConnection.xaml.cs">
+      <DependentUpon>CloseSQLConnection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\DataBase\ExecuteSQLStatement.xaml.cs">
+      <DependentUpon>ExecuteSQLStatement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\DataBase\OpenSQLConnection.xaml.cs">
+      <DependentUpon>OpenSQLConnection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\DateTimeActions\AddToDateTime.xaml.cs">
+      <DependentUpon>AddToDateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\DateTimeActions\GetCurrentDateTime.xaml.cs">
+      <DependentUpon>GetCurrentDateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\DateTimeActions\SubtractDates.xaml.cs">
+      <DependentUpon>SubtractDates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Delay\DelayByTiming.xaml.cs">
+      <DependentUpon>DelayByTiming.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Email\GetMessages.xaml.cs">
+      <DependentUpon>GetMessages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Email\ProcessMessage.xaml.cs">
+      <DependentUpon>ProcessMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Email\SendMessages.xaml.cs">
+      <DependentUpon>SendMessages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Excel\AddNewWorkSheet.xaml.cs">
+      <DependentUpon>AddNewWorkSheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Excel\CloseExcel.xaml.cs">
+      <DependentUpon>CloseExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Excel\LaunchExcel.xaml.cs">
+      <DependentUpon>LaunchExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Excel\ReadFromExcel.xaml.cs">
+      <DependentUpon>ReadFromExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Excel\SetActiveWorkSheet.xaml.cs">
+      <DependentUpon>SetActiveWorkSheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Excel\WriteToExcel.xaml.cs">
+      <DependentUpon>WriteToExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Flow Control\GoTo.xaml.cs">
+      <DependentUpon>GoTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Flow Control\Label_.xaml.cs">
+      <DependentUpon>Label_.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Loops\EndLoop.xaml.cs">
+      <DependentUpon>EndLoop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Loops\ExitLoop.xaml.cs">
+      <DependentUpon>ExitLoop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Loops\ForEach.xaml.cs">
+      <DependentUpon>ForEach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Loops\Loop.xaml.cs">
+      <DependentUpon>Loop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Loops\LoopCondition.xaml.cs">
+      <DependentUpon>LoopCondition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Loops\LoopConditionEnd.xaml.cs">
+      <DependentUpon>LoopConditionEnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Loops\LoopContinue.xaml.cs">
+      <DependentUpon>LoopContinue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\MessageBoxes\DisplayMessage.xaml.cs">
+      <DependentUpon>DisplayMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Mouse and Keyboard\BlockInput.xaml.cs">
+      <DependentUpon>BlockInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Mouse and Keyboard\MouseClick.xaml.cs">
+      <DependentUpon>MouseClick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Mouse and Keyboard\MouseScroll.xaml.cs">
+      <DependentUpon>MouseScroll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Mouse and Keyboard\MoveMouse.xaml.cs">
+      <DependentUpon>MoveMouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Mouse and Keyboard\PressReleaseKey.xaml.cs">
+      <DependentUpon>PressReleaseKey.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Mouse and Keyboard\SetKeyState.xaml.cs">
+      <DependentUpon>SetKeyState.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ChangeTextCase.xaml.cs">
+      <DependentUpon>ChangeTextCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ChangeTextFormat.xaml.cs">
+      <DependentUpon>ChangeTextFormat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ChangeTextToNumber.xaml.cs">
+      <DependentUpon>ChangeTextToNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\CompareText.xaml.cs">
+      <DependentUpon>CompareText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ConverNumberToText.xaml.cs">
+      <DependentUpon>ConverNumberToText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ConvertDateTimeToText.xaml.cs">
+      <DependentUpon>ConvertDateTimeToText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ConvertTextToDateTime.xaml.cs">
+      <DependentUpon>ConvertTextToDateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\CutAndJoin.xaml.cs">
+      <DependentUpon>CutAndJoin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\FindText.xaml.cs">
+      <DependentUpon>FindText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\GetSubText.xaml.cs">
+      <DependentUpon>GetSubText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\GetTextLength.xaml.cs">
+      <DependentUpon>GetTextLength.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\JoinText.xaml.cs">
+      <DependentUpon>JoinText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ReplaceText.xaml.cs">
+      <DependentUpon>ReplaceText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\ReverseText.xaml.cs">
+      <DependentUpon>ReverseText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\SplitText.xaml.cs">
+      <DependentUpon>SplitText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Text\TrimText.xaml.cs">
+      <DependentUpon>TrimText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\AddTtemToList.xaml.cs">
+      <DependentUpon>AddTtemToList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\ClearList.xaml.cs">
+      <DependentUpon>ClearList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\CreateNewList.xaml.cs">
+      <DependentUpon>CreateNewList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\DecreaseVariable.xaml.cs">
+      <DependentUpon>DecreaseVariable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\DeleteList.xaml.cs">
+      <DependentUpon>DeleteList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\GetListLength.xaml.cs">
+      <DependentUpon>GetListLength.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\IncreaseVariable.xaml.cs">
+      <DependentUpon>IncreaseVariable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\MergeList.xaml.cs">
+      <DependentUpon>MergeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\RemoveDuplicateItemFromList.xaml.cs">
+      <DependentUpon>RemoveDuplicateItemFromList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\RemoveItemFromList.xaml.cs">
+      <DependentUpon>RemoveItemFromList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\ReverseList.xaml.cs">
+      <DependentUpon>ReverseList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\SetVariable.xaml.cs">
+      <DependentUpon>SetVariable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\SuffleList.xaml.cs">
+      <DependentUpon>SuffleList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariablesActions\TruncateNumber.xaml.cs">
+      <DependentUpon>TruncateNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariableView\DataSetView.xaml.cs">
+      <DependentUpon>DataSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\VariableView\VariablePicker.xaml.cs">
+      <DependentUpon>VariablePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\ABForScreenshot.xaml.cs">
+      <DependentUpon>ABForScreenshot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\AutomationBrowerForSetDropDown.xaml.cs">
+      <DependentUpon>AutomationBrowerForSetDropDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\AutomationBrowser.xaml.cs">
+      <DependentUpon>AutomationBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserCheckBox.xaml.cs">
+      <DependentUpon>AutomationBrowserCheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserForClickOnWebPage.xaml.cs">
+      <DependentUpon>AutomationBrowserForClickOnWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserForExtractData.xaml.cs">
+      <DependentUpon>AutomationBrowserForExtractData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserRadioButton.xaml.cs">
+      <DependentUpon>AutomationBrowserRadioButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\ClickOnWebPage.xaml.cs">
+      <DependentUpon>ClickOnWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\CloseIE.xaml.cs">
+      <DependentUpon>CloseIE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\ExtractDataFromWeb.xaml.cs">
+      <DependentUpon>ExtractDataFromWeb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskModel\Web Automation\GetObjectDetails.cs" />
+    <Compile Include="RobotDesigner\TaskView\Web Automation\ExtractPageDetails.xaml.cs">
+      <DependentUpon>ExtractPageDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\GetObjectDetails.xaml.cs">
+      <DependentUpon>GetObjectDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\HoverOnWebObject.xaml.cs">
+      <DependentUpon>HoverOnWebObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\LaunchNewIE.xaml.cs">
+      <DependentUpon>LaunchNewIE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\PopulateTextFiedOnWeb.xaml.cs">
+      <DependentUpon>PopulateTextFiedOnWeb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\SelectWebObject.xaml.cs">
+      <DependentUpon>SelectWebObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\SetCheckBox.xaml.cs">
+      <DependentUpon>SetCheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\SetDropDownList.xaml.cs">
+      <DependentUpon>SetDropDownList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\SetRadioButton.xaml.cs">
+      <DependentUpon>SetRadioButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\Web Automation\TakeScreenShotOfWebPage.xaml.cs">
+      <DependentUpon>TakeScreenShotOfWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\Variable\DataTableVariable.cs" />
+    <Compile Include="RobotDesigner\Variable\HtmlElementInfo.cs" />
+    <Compile Include="RobotDesigner\Variable\IntegerVariable.cs" />
+    <Compile Include="RobotDesigner\Variable\ListVariable.cs" />
+    <Compile Include="RobotDesigner\Variable\ReadVariableFromXML.cs" />
+    <Compile Include="RobotDesigner\Variable\SerializationTest.cs" />
+    <Compile Include="RobotDesigner\Variable\StringVariable.cs" />
+    <Compile Include="RobotDesigner\TaskView\File\CopyFiles.xaml.cs">
+      <DependentUpon>CopyFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\DeleteFiles.xaml.cs">
+      <DependentUpon>DeleteFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\GetFilePathPart.xaml.cs">
+      <DependentUpon>GetFilePathPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\GetFilesinFolder.xaml.cs">
+      <DependentUpon>GetFilesinFolder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\GetTemporaryFile.xaml.cs">
+      <DependentUpon>GetTemporaryFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\MoveFiles.xaml.cs">
+      <DependentUpon>MoveFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\ReadFromCSVFile.xaml.cs">
+      <DependentUpon>ReadFromCSVFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\ReadTextfromFile.xaml.cs">
+      <DependentUpon>ReadTextfromFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\RenameFiles.xaml.cs">
+      <DependentUpon>RenameFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\WriteTexttoFile.xaml.cs">
+      <DependentUpon>WriteTexttoFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\TaskView\File\WriteToCSVFile.xaml.cs">
+      <DependentUpon>WriteToCSVFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotDesigner\Variable\TestVar.cs" />
+    <Compile Include="RobotDesigner\Variable\VariableBase.cs" />
+    <Compile Include="RobotDesigner\Variable\VariableCollectionModel.cs" />
+    <Compile Include="RobotDesigner\Variable\VariableStorage.cs" />
+    <Compile Include="RobotDesigner\Variable\WriteVariableInXML.cs" />
+    <Compile Include="Serialization\BinarySerialization.cs" />
+    <Compile Include="Serialization\SerializationHelper.cs" />
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartupPage.xaml.cs">
+      <DependentUpon>StartupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\ClassTemplate.cs" />
+    <Compile Include="Templates\TemplateUserControl.xaml.cs">
+      <DependentUpon>TemplateUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TypeEditor\FileSelectorTypeEditor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Admin\Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\Admin1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OutputUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Resources\en-US.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\fr-FR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskModel\TaskViewFrameUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\Else.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\ElseIf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\EndIf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\If.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\IfFileExists.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\IfFolderExists.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\IfImageExists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\IfProcessExists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\IfService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Conditional\IfWindowExists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\DataBase\CloseSQLConnection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\DataBase\ExecuteSQLStatement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\DataBase\OpenSQLConnection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\DateTimeActions\AddToDateTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\DateTimeActions\GetCurrentDateTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\DateTimeActions\SubtractDates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Delay\DelayByTiming.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Email\GetMessages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Email\ProcessMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Email\SendMessages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Excel\AddNewWorkSheet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Excel\CloseExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Excel\LaunchExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Excel\ReadFromExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Excel\SetActiveWorkSheet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Excel\WriteToExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\CopyFiles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\DeleteFiles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\GetFilePathPart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\GetFilesinFolder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\GetTemporaryFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\MoveFiles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\ReadFromCSVFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\ReadTextfromFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\RenameFiles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\WriteTexttoFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\File\WriteToCSVFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Flow Control\GoTo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Flow Control\Label_.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Loops\EndLoop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Loops\ExitLoop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Loops\ForEach.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Loops\Loop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Loops\LoopCondition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Loops\LoopConditionEnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Loops\LoopContinue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\MessageBoxes\DisplayMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Mouse and Keyboard\BlockInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Mouse and Keyboard\MouseClick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Mouse and Keyboard\MouseScroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Mouse and Keyboard\MoveMouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Mouse and Keyboard\PressReleaseKey.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Mouse and Keyboard\SetKeyState.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ChangeTextCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ChangeTextFormat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ChangeTextToNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\CompareText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ConverNumberToText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ConvertDateTimeToText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ConvertTextToDateTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\CutAndJoin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\FindText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\GetSubText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\GetTextLength.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\JoinText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ReplaceText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\ReverseText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\SplitText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Text\TrimText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\AddTtemToList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\ClearList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\CreateNewList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\DecreaseVariable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\DeleteList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\GetListLength.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\IncreaseVariable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\MergeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\RemoveDuplicateItemFromList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\RemoveItemFromList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\ReverseList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\SetVariable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\SuffleList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariablesActions\TruncateNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariableView\DataSetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\VariableView\VariablePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\ABForScreenshot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\AutomationBrowerForSetDropDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\AutomationBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserForClickOnWebPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserForExtractData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\AutomationBrowserRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\ClickOnWebPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\CloseIE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\ExtractDataFromWeb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\ExtractPageDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\GetObjectDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\HoverOnWebObject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\LaunchNewIE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\PopulateTextFiedOnWeb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\SelectWebObject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\SetCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\SetDropDownList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\SetRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RobotDesigner\TaskView\Web Automation\TakeScreenShotOfWebPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\TemplateUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="web_camera.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sample_Camera_Image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alarm-Light.png" />
+    <Resource Include="Images\Alarm-Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alarm-Cover-Dark.png" />
+    <Resource Include="Images\Alarm-Cover-Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alarm-Disconnected-Light.png" />
+    <Resource Include="Images\Alarm-Disconnected-Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Record-Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Play-Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Main-Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Zoomout-Normal.png" />
+    <Resource Include="Images\ZoomIn-Normal.png" />
+    <Resource Include="Images\PTZ-Pan-Normal.png" />
+    <Resource Include="Images\Trigger-Normal.png" />
+    <Resource Include="Images\Basic-Normal.png" />
+    <Resource Include="Images\Tutorial-Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Settings-Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ChannelDetails-Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dragablz-master\Dragablz\Dragablz.net45.csproj">
+      <Project>{7b11011c-7fd7-4ab0-a1ad-04e940b026de}</Project>
+      <Name>Dragablz.net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MahApps.Metro-develop\src\MahApps.Metro\MahApps.Metro\MahApps.Metro.NET45.csproj">
+      <Project>{579d4fa7-0946-4592-ae9b-a73d2d1262c6}</Project>
+      <Name>MahApps.Metro.NET45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaterialDesignColors.Wpf\MaterialDesignColors.Wpf.csproj">
+      <Project>{90b53209-c60c-4655-b28d-a1b3e1044ba3}</Project>
+      <Name>MaterialDesignColors.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaterialDesignThemes.MahApps\MaterialDesignThemes.MahApps.csproj">
+      <Project>{81556a2d-d467-43e7-945b-fd987c676cf6}</Project>
+      <Name>MaterialDesignThemes.MahApps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaterialDesignThemes.Wpf\MaterialDesignThemes.Wpf.csproj">
+      <Project>{f079fb0a-a8ed-4216-b6a5-345756751a04}</Project>
+      <Name>MaterialDesignThemes.Wpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\char1.jpg" />
+    <Resource Include="Images\char2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Lboi-Tweetscotty-Twitter-bot.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDASC">
+      <Guid>{2206CEB0-19C1-11D1-89E0-00C04FD7A829}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSHTML">
+      <Guid>{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.33.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.33.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.8\build\Selenium.InternetExplorer.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.InternetExplorer.WebDriver.3.8\build\Selenium.InternetExplorer.WebDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.33.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.33.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\Selenium.InternetExplorer.WebDriver.3.8\build\Selenium.InternetExplorer.WebDriver.targets" Condition="Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.8\build\Selenium.InternetExplorer.WebDriver.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

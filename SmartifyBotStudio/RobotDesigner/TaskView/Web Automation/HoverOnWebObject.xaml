@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="SmartifyBotStudio.RobotDesigner.TaskView.Web_Automation.HoverOnWebObject"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SmartifyBotStudio.RobotDesigner.TaskView.Web_Automation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"  Background="DimGray"
+             Height="450" Width="560" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.RadioButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="1.2*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon x:Name="imp_delete" Grid.Column="0" HorizontalAlignment="Center" Width="45" Height="40" VerticalAlignment="Center"  Kind="Web"  Foreground="Orange"/>
+            <StackPanel Grid.Column="1">
+                <TextBlock Foreground="White" Text="Hover Mouse Over Element Web Page" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" FontSize="14" />
+                <TextBlock Foreground="White" TextWrapping="Wrap" Width="402" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        Hover the mouse over an element of a web page.
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TabControl HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="535" Margin="12,0,0,0" Background="{x:Null}">
+                <TabItem Header="Basic">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".7*"/>
+                            <RowDefinition Height=".7*"/>
+                            <RowDefinition Height=".5*"/>
+                            <RowDefinition Height=".5*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1.7*"/>
+
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <TextBlock Foreground="White" Text="Task Instruct" HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="33" Width="106"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Label Content="Web Browser Instance : " Foreground="White" Margin="57,4,330,6"   ></Label>
+                            <ComboBox Name="webBrowserInstance_combo" Foreground="White" Height="28" Margin="198,4,37,0" VerticalAlignment="Top"></ComboBox>
+                            <Button Grid.Column="0" x:Name="fie_imagei" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Right" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="0,5,6,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Label Content="Control : " Foreground="White" Margin="134,0,339,0" ></Label>
+                            <TextBlock Text="" Foreground="White" Name="control_textBlock" Margin="195,6,3,4"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Label Content="Address : " Foreground="White" Margin="130,0,341,0" >
+
+                            </Label>
+                            <TextBlock Name="address_textBlock" Text="" Foreground="White" Margin="195,5,83,5"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <Button Content="Select Control" Click="open_automate_webBrowser" Foreground="White" Margin="217,6,138,10" />
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <Label Content="Variable Update" Foreground="White" FontWeight="Bold" Margin="47,0,344,59"></Label>
+                            <Label Content="Store Web Element Attribute into : " Foreground="White" Margin="2,37,326,0"></Label>
+                            <TextBox Name="attribureStore_text" Foreground="White" Margin="193,27,45,24"/>
+                            <Button Grid.Column="0" x:Name="fie_magei" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"   HorizontalAlignment="Right" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent" Margin="0,39,13,0">
+                                <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                            </Button>
+                        </Grid>
+
+
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Error Handling">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="15 0 15 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <CheckBox Foreground="White" Background="White" Grid.Row="0" x:Name="this_checkbox" Content="This action is Enabled" HorizontalAlignment="Left" Margin="0 0 0 10" VerticalAlignment="Center"/>
+            <Grid Grid.Row="1" VerticalAlignment="Bottom">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="more_button_Click" x:Name="more_button" Content="More Info" HorizontalAlignment="Left" Height="26" Width="118"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="ok_button_Click" x:Name="ok_button" Content="Save" HorizontalAlignment="Right" Margin="0 0 100 0" Height="26" Width="75"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btn_cancel_Click" x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Right" Height="26" Width="75"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

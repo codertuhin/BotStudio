@@ -1,0 +1,397 @@
+﻿<UserControl xmlns:my="http://metro.mahapps.com/winfx/xaml/controls"  x:Class="SmartifyBotStudio.RobotDesigner.TaskView.MessageBoxes.DisplayMessage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SmartifyBotStudio.RobotDesigner.TaskView.Web_Automation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"  Background="DimGray"
+             Height="600" Width="535" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.RadioButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4.5*" />
+            <RowDefinition Height=".7*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon x:Name="imp_delete" Grid.Column="0" HorizontalAlignment="Center" Width="45" Height="40" VerticalAlignment="Center"  Kind="MessageText"  Foreground="Orange"/>
+            <StackPanel Grid.Column="1">
+                <TextBlock Foreground="White" Text="Display Message" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" FontSize="14" />
+                <TextBlock Foreground="White" TextWrapping="Wrap" Width="402" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        Description
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TabControl HorizontalAlignment="Left" Height="470" VerticalAlignment="Top" Width="510" Margin="12,0,0,0" Background="{x:Null}">
+                <TabItem Header="Basic">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".7*"/>
+                            <RowDefinition Height=".9*"/>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height=".9*"/>
+                            <RowDefinition Height=".9*"/>
+                            <RowDefinition Height=".9*"/>
+                            <RowDefinition Height=".8*"/>
+                            <RowDefinition Height=".8*"/>
+                            <RowDefinition Height=".9*"/>
+                            <RowDefinition Height=".9*"/>
+                            <RowDefinition Height="1.0*"/>
+
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+
+                            <TextBlock Foreground="White" Text="Task Instruct" HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="33" Width="106"/>
+
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <!--<Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=custom, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".6*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="MessageBox Title : " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Height="26" />
+                            <TextBox Name="title_text"  Grid.Column="1" VerticalAlignment="Center"  Foreground="White" Height="28" Width="265" HorizontalAlignment="Left"  ></TextBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <!--<Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=custom, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".6*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Message to Display : " Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Right" Height="26" />
+                            <RichTextBox Name="msg_rtb" Grid.Column="1" VerticalAlignment="Center"   Height="60" Width="265" HorizontalAlignment="Left"  ></RichTextBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+                                <Button Click="pickVar_click" Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <!--<Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=custom, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".6*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="MessageBox Icon : " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Height="26" />
+                            <ComboBox  Name="msgIcon_combo" SelectedIndex="0" Grid.Column="1" VerticalAlignment="Center"  Foreground="White" Height="28" Width="265" HorizontalAlignment="Left"  >
+                                <ComboBoxItem>None</ComboBoxItem>
+                                <ComboBoxItem>Information</ComboBoxItem>
+                                <ComboBoxItem>Question</ComboBoxItem>
+                                <ComboBoxItem>Working</ComboBoxItem>
+                                <ComboBoxItem>Error</ComboBoxItem>
+                            </ComboBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <!--<Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=custom, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".6*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="MessageBox BUttons : " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Height="26" />
+                            <ComboBox Name="msgBtn_combo" Grid.Column="1" SelectedIndex="0" VerticalAlignment="Center"  Foreground="White" Height="28" Width="265" HorizontalAlignment="Left"  >
+                                <ComboBoxItem>OK</ComboBoxItem>
+                                <ComboBoxItem>OK-Cancel</ComboBoxItem>
+                                <ComboBoxItem>Yes-No</ComboBoxItem>
+                                <ComboBoxItem>Yes-No-Cancel</ComboBoxItem>
+                                <ComboBoxItem>Abort-Retry-Ignore</ComboBoxItem>
+                                <ComboBoxItem>Retry-Cancel</ComboBoxItem>
+                            </ComboBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <!--<Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=custom, Path=IsSelected}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".6*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Default Button : " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Height="26" />
+                            <ComboBox Name="msgDefalut_combo" SelectedIndex="0"  Grid.Column="1" VerticalAlignment="Center"  Foreground="White" Height="28" Width="265" HorizontalAlignment="Left"  >
+                                <ComboBoxItem>First Button</ComboBoxItem>
+                                <ComboBoxItem>Second Button</ComboBoxItem>
+                                <ComboBoxItem>Third Button</ComboBoxItem>
+                            </ComboBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="6">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="159*"></ColumnDefinition>
+                                <ColumnDefinition Width="200*"></ColumnDefinition>
+                                <ColumnDefinition Width="145*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <CheckBox Name="onTop_chexkBox" VerticalAlignment="Center" Foreground="White" Grid.Column="1" Height="20" Margin="0,10" Checked="useRegulerExpression_checkBox_Checked" >Keep MessageBox Always on Top</CheckBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                                    <ColumnDefinition Width="88*"></ColumnDefinition>
+                                    <ColumnDefinition Width="49*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent" Margin="2,5,60,5" RenderTransformOrigin="0.096,0.462">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="7">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="159*"></ColumnDefinition>
+                                <ColumnDefinition Width="200*"></ColumnDefinition>
+                                <ColumnDefinition Width="145*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <CheckBox Name="closeMessageAutomatically_checkBox"  VerticalAlignment="Center" Foreground="White" Grid.Column="1" Height="20" Margin="0,10" Checked="useRegulerExpression_checkBox_Checked">Close MessageBox Automatically</CheckBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                                    <ColumnDefinition Width="88*"></ColumnDefinition>
+                                    <ColumnDefinition Width="49*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent" Margin="2,5,60,5" RenderTransformOrigin="0.096,0.462">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="8">
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=closeMessageAutomatically_checkBox, Path=IsChecked}"    Value="True">
+                                            <Setter Property="Visibility"  Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="159*"></ColumnDefinition>
+                                <ColumnDefinition Width="206*"></ColumnDefinition>
+                                <ColumnDefinition Width="139*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid Grid.Column="1" Margin="0,0,10,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="57*"></ColumnDefinition>
+                                    <ColumnDefinition Width="75*"></ColumnDefinition>
+                                    <ColumnDefinition Width="133*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="After : " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Height="26" Margin="0,6,0,7" Width="45" />
+                                <my:NumericUpDown Name="closeTimeUpDown" Foreground="White" Background="DimGray" Grid.Column="1" Margin="0,6,78,5" Grid.ColumnSpan="2" />
+                                <Label Grid.Column="2" Content="seconds " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Height="26" Margin="20,6,0,7" Width="55" />
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25*"/>
+                                <ColumnDefinition Width="101*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Variable Update" Foreground="White" FontWeight="Bold" Margin="32,0,366,-5" Height="44" VerticalAlignment="Top" Grid.ColumnSpan="2"></Label>
+                        </Grid>
+                        <Grid Grid.Row="10">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".6*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Store Button Pressed Into : " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Height="26" />
+                            <TextBox  Name="storeVar_text" Grid.Column="1" VerticalAlignment="Center"  Foreground="White" Height="28" Width="265" HorizontalAlignment="Left"  ></TextBox>
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help"  HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="CommentQuestionOutline" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+                                <Button Grid.Column="1"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Help" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="26" Height="26" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Settings" Foreground="DarkOrange" Width="20" Height="20" />
+                                </Button>
+
+
+                            </Grid>
+                        </Grid>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Error Handling">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="15 0 15 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <CheckBox Foreground="White" Background="White" Grid.Row="0" x:Name="this_checkbox" Content="This action is Enabled" HorizontalAlignment="Left" Margin="0 0 0 10" VerticalAlignment="Center"/>
+            <Grid Grid.Row="1" VerticalAlignment="Bottom">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="more_button_Click" x:Name="more_button" Content="More Info" HorizontalAlignment="Left" Height="26" Width="118"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="ok_button_Click" x:Name="ok_button" Content="Save" HorizontalAlignment="Right" Margin="0 0 100 0" Height="26" Width="75"/>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btn_cancel_Click" x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Right" Height="26" Width="75"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

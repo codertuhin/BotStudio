@@ -1,0 +1,241 @@
+﻿<UserControl Name="startUpPage_usercontrol" x:Class="SmartifyBotStudio.StartupPage"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SmartifyBotStudio.Admin"
+                 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600"  d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DataGrid.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="MainGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="109"/>
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="DimGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="83*"/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="56*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Foreground="#FFF" Content="What do you Want to do?"  HorizontalAlignment="Stretch" FontSize="18" Margin="6,1,5,71" />
+            <TextBlock Grid.Column="2"  TextAlignment="Right" Margin="72,2,19,83">
+                     <Hyperlink Foreground="#5cdee0"  NavigateUri="http://www.google.com" FontSize="14" FontWeight="Bold">
+                                                               Need help   
+                       </Hyperlink>
+            </TextBlock>
+            <materialDesign:PackIcon Grid.Column="2" HorizontalAlignment="Right"  Width="22" Height="22" VerticalAlignment="Top"  Kind="Help" Foreground="#ffbe04" Margin="0,5,-1,0"/>
+
+            <StackPanel  Orientation="Horizontal" Grid.Column="1"  HorizontalAlignment="Stretch" >
+
+                <StackPanel x:Name="Dashboard1"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="133" Height="92">
+
+
+                    <StackPanel Orientation="Vertical">
+
+                        <Button  x:Name="btnCaptureTask" HorizontalContentAlignment="Stretch" Background="Gray" Width="133" Height="92" BorderBrush="{x:Null}" Click="btnCaptureTask_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <materialDesign:PackIcon Grid.Row="0" HorizontalAlignment="Center" Width="100" Height="80" VerticalAlignment="Center"  Kind="Binoculars"  Foreground="#5cdee0" Margin="3,-20,3,-6" Grid.RowSpan="2"/>
+                                <TextBlock Grid.Row="1" Text="Capture a task" TextAlignment="Center" Foreground="#ffbe04"  Margin="-10,21,-10,-15" FontSize="16"/>
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+
+                <StackPanel x:Name="DashboardButton3"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="133" Height="92">
+
+                    <StackPanel Orientation="Vertical">
+                        <Button x:Name="btnBuildTask"  HorizontalContentAlignment="Stretch" Width="133" Background="Gray" Height="92" BorderBrush="{x:Null}" Click="btnBuildTask_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <materialDesign:PackIcon Grid.Row="0" HorizontalAlignment="Center" Width="100" Height="80" VerticalAlignment="Center"  Kind="WindowRestore"   Foreground="#5cdee0" Margin="2,-23,4,-9" Grid.RowSpan="2"/>
+
+                                <TextBlock Text="Build a task" TextAlignment="Center" Foreground="#ffbe04"  Grid.Row="1" Margin="-10,22,-9,-20" FontSize="16"/>
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Name="DashboardButton5"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"   Width="133" Height="92">
+
+
+                    <StackPanel Orientation="Vertical" >
+
+                        <Button  HorizontalContentAlignment="Stretch" Background="Gray" Width="133" Height="92" BorderBrush="{x:Null}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <materialDesign:PackIcon Grid.Row="0" HorizontalAlignment="Center" Width="100" Height="80" VerticalAlignment="Center"  Kind="Video"  Foreground="#5cdee0" Margin="3,-20,3,-6" Grid.RowSpan="2"/>
+                                <TextBlock Grid.Row="1" Text="Design a process" TextAlignment="Center" Foreground="#ffbe04" Margin="-14,22,-6,-16" FontSize="16"/>
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+
+
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0"  Background="DimGray">
+
+                <Button Height="40" Margin="3,0,3,3"  HorizontalContentAlignment="Stretch" Background="Gray" BorderBrush="{x:Null}">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon  HorizontalAlignment="Left" Width="25" Height="25" Grid.Column="1"  Kind="FileDocument"  Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Stretch" FontWeight="Normal" TextAlignment="Left" Text="Recent files"  Foreground="White" FontSize="14" />
+                    </Grid>
+                </Button>
+                <Button Height="40" Margin="3"  HorizontalContentAlignment="Stretch" Background="Gray" BorderBrush="{x:Null}">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon  HorizontalAlignment="Left" Width="25" Height="25" Grid.Column="1"  Kind="Folder"  Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Stretch" FontWeight="Normal" TextAlignment="Left" Text="Open" Foreground="White" FontSize="14"  />
+                    </Grid>
+                </Button>
+
+                <Button Height="40" Margin="3" HorizontalContentAlignment="Stretch" Background="Gray" BorderBrush="{x:Null}">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon  HorizontalAlignment="Left" Width="25" Height="25" Grid.Column="1"  Kind="Database"  Foreground="White" />
+                        <TextBlock HorizontalAlignment="Stretch" FontWeight="Normal" TextAlignment="Left" Text="Library" Foreground="White" Grid.Column="0" FontSize="14"  />
+                    </Grid>
+                </Button>
+
+                <Button Height="40" Margin="3" HorizontalContentAlignment="Stretch" Background="Gray" BorderBrush="{x:Null}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon HorizontalAlignment="Left" Width="25" Height="25" Grid.Column="1"  Kind="LightbulbOutline"  Foreground="White" />
+                        <TextBlock Grid.Column="0"  HorizontalAlignment="Stretch" FontWeight="Normal" TextAlignment="Left"  Text="Learn" Foreground="White" Height="25" VerticalAlignment="Top" FontSize="14"  />
+                    </Grid>
+                </Button>
+                <Button Height="40" Margin="3" HorizontalContentAlignment="Stretch" Background="Gray" BorderBrush="{x:Null}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon HorizontalAlignment="Left" Width="25" Height="25" Grid.Column="1"  Kind="AccountCardDetails"  Foreground="White" />
+                        <TextBlock Grid.Column="0"  HorizontalAlignment="Stretch" FontWeight="Normal" TextAlignment="Left"  Text="Updates" Foreground="White" Height="25" VerticalAlignment="Top" FontSize="14"  />
+                    </Grid>
+                </Button>
+
+
+            </StackPanel>
+
+
+            <Grid Grid.Column="1" Background="Gray">
+
+                <StackPanel >
+
+                    <DataGrid IsReadOnly="True" ItemsSource="{Binding Items3}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                      materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8" Foreground="#FFFBF6F6" Background="{x:Null}" BorderBrush="#FF688CAF">
+                        <DataGrid.Columns>
+
+                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding Machine}"
+                                        Header="Thumbnail"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                            <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding Processed}"
+                                                               Header="Filename"                                                        
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" 
+                                                               />
+                            <!-- set a max length to get an indicator in the editor -->
+                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding Successful}"
+                                                               Header="Date Created"                                                        
+                                                               MaxLength="255" 
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  />
+                            <materialDesign:MaterialDataGridTextColumn Binding="{Binding Failed}"
+                                                        Header="Last Modified"                                                         
+                                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:MaterialDataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                    </Style>
+                                </materialDesign:MaterialDataGridTextColumn.HeaderStyle>
+                                <materialDesign:MaterialDataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                    </Style>
+                                </materialDesign:MaterialDataGridTextColumn.ElementStyle>
+                            </materialDesign:MaterialDataGridTextColumn>
+
+                            <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+                            <materialDesign:MaterialDataGridTextColumn Header="Size"        
+                                                                   Binding="{Binding Status}"       />
+
+
+                            <!--<DataGridTextColumn Binding="{Binding Team}"
+                                        Header="Team"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+
+                            <DataGridTextColumn Binding="{Binding AHT}"
+                                        Header="AHT(Mins)"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />-->
+                        </DataGrid.Columns>
+
+                        <local:Data AHT="45" Failed="562" Machine="Kery BOT" Processed="896" Successful="25" Status="Working" Team="Marketing Team"/>
+
+                        <local:Data AHT="45" Failed="562" Machine="Kery BOT" Processed="896" Successful="25" Status="Working" Team="Marketing Team"/>
+
+                        <local:Data AHT="45" Failed="562" Machine="Kery BOT" Processed="896" Successful="25" Status="Working" Team="Marketing Team"/>
+
+                        <local:Data AHT="45" Failed="562" Machine="Kery BOT" Processed="896" Successful="25" Status="Working" Team="Marketing Team"/>
+
+
+                    </DataGrid>
+
+                </StackPanel>
+
+
+            </Grid>
+
+        </Grid>
+
+
+
+    </Grid>
+</UserControl>

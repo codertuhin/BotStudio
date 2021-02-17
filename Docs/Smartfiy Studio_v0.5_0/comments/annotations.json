@@ -1,0 +1,298 @@
+{
+  "comments": [
+    {
+      "canvasID": "m-2f824c66-492d-4049-bb27-5521387ec12b",
+      "elementID": "m-Rich_text_220",
+      "canvasURL": "masters/2f824c66-492d-4049-bb27-5521387ec12b",
+      "author": "Anonymous",
+      "authorID" : 21130318,
+      "code": 1,
+      "parentCode": null,
+      "content": "Onclick shall open the main app windows with the [Design Process] view.",
+      "timestamp": "1494450829887",
+      "date": "11 May 2017 07:13",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-9e415898-0f31-49d7-b415-e7473fd5ce7c",
+      "elementID": "s-Image_13",
+      "canvasURL": "screens/9e415898-0f31-49d7-b415-e7473fd5ce7c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 2,
+      "parentCode": null,
+      "content": "Onclick shall launch application window. The application window shall display a loading page with progress animation.",
+      "timestamp": "1495675893331",
+      "date": "25 May 2017 11:31",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-9e415898-0f31-49d7-b415-e7473fd5ce7c",
+      "elementID": "s-Image_13",
+      "canvasURL": "screens/9e415898-0f31-49d7-b415-e7473fd5ce7c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 3,
+      "parentCode": null,
+      "content": "test",
+      "timestamp": "1495676439418",
+      "date": "25 May 2017 11:40",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2f824c66-492d-4049-bb27-5521387ec12b",
+      "elementID": "m-Rectangle_14",
+      "canvasURL": "masters/2f824c66-492d-4049-bb27-5521387ec12b",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 4,
+      "parentCode": null,
+      "content": "This button shall be selected as default.",
+      "timestamp": "1495676715720",
+      "date": "25 May 2017 11:45",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2f824c66-492d-4049-bb27-5521387ec12b",
+      "elementID": "m-Rectangle_15",
+      "canvasURL": "masters/2f824c66-492d-4049-bb27-5521387ec12b",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 5,
+      "parentCode": null,
+      "content": "The Open button shall open a standard windows dialogue for selecting files. The default directory shall be local documents/smartify",
+      "timestamp": "1495676789044",
+      "date": "25 May 2017 11:46",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2f824c66-492d-4049-bb27-5521387ec12b",
+      "elementID": "m-Rectangle_16",
+      "canvasURL": "masters/2f824c66-492d-4049-bb27-5521387ec12b",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 6,
+      "parentCode": null,
+      "content": "The library window shall display items on local machine and items not on local machine.",
+      "timestamp": "1495676840343",
+      "date": "25 May 2017 11:47",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2f824c66-492d-4049-bb27-5521387ec12b",
+      "elementID": "m-Rectangle_17",
+      "canvasURL": "masters/2f824c66-492d-4049-bb27-5521387ec12b",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 7,
+      "parentCode": null,
+      "content": "Display a panel with HTML content that is linked to a page online where contents are always updated.",
+      "timestamp": "1495677022834",
+      "date": "25 May 2017 11:50",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2f824c66-492d-4049-bb27-5521387ec12b",
+      "elementID": "m-Rectangle_18",
+      "canvasURL": "masters/2f824c66-492d-4049-bb27-5521387ec12b",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 8,
+      "parentCode": null,
+      "content": "Similar to the learn page",
+      "timestamp": "1495677042315",
+      "date": "25 May 2017 11:50",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2f824c66-492d-4049-bb27-5521387ec12b",
+      "elementID": "m-Text_19",
+      "canvasURL": "masters/2f824c66-492d-4049-bb27-5521387ec12b",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 9,
+      "parentCode": null,
+      "content": "This link shall trigger the default browser and connect online to the web page at smartify.ai/help",
+      "timestamp": "1495678365661",
+      "date": "25 May 2017 12:12",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "",
+      "elementID": "",
+      "canvasURL": "",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 11,
+      "parentCode": null,
+      "content": "Onclick of this icon shall display message dialogue box to enter an interaction message.",
+      "timestamp": "1495690025831",
+      "date": "25 May 2017 15:27",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2140e15f-d921-49ce-b858-cb2140356d6c",
+      "elementID": "m-Image_134",
+      "canvasURL": "masters/2140e15f-d921-49ce-b858-cb2140356d6c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 12,
+      "parentCode": null,
+      "content": "Message tool shall enable a user to add a message box to task during playback execution. The task should pause and wait for user to click on dialogue buttons before proceeding.",
+      "timestamp": "1495777658972",
+      "date": "26 May 2017 15:47",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2140e15f-d921-49ce-b858-cb2140356d6c",
+      "elementID": "m-Image_25",
+      "canvasURL": "masters/2140e15f-d921-49ce-b858-cb2140356d6c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 13,
+      "parentCode": null,
+      "content": "Instruction icon shall highlight an object on the desktop and inform use of what action is required to proceed.",
+      "timestamp": "1495777716862",
+      "date": "26 May 2017 15:48",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "",
+      "elementID": "",
+      "canvasURL": "",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 14,
+      "parentCode": null,
+      "content": "This icon....",
+      "timestamp": "1495783528108",
+      "date": "26 May 2017 17:25",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-a0618400-2069-4c6b-b141-8d53a689d39e",
+      "elementID": "m-Rectangle_1",
+      "canvasURL": "masters/a0618400-2069-4c6b-b141-8d53a689d39e",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 15,
+      "parentCode": null,
+      "content": "This area should list numbers against each thumbnail/image of action steps",
+      "timestamp": "1499229216500",
+      "date": "05 July 2017 14:33",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-a0618400-2069-4c6b-b141-8d53a689d39e",
+      "elementID": "m-Image_1",
+      "canvasURL": "masters/a0618400-2069-4c6b-b141-8d53a689d39e",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 16,
+      "parentCode": null,
+      "content": "Display each image as an object. Make the page scrollable.",
+      "timestamp": "1499229258712",
+      "date": "05 July 2017 14:34",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2140e15f-d921-49ce-b858-cb2140356d6c",
+      "elementID": "m-Image_182",
+      "canvasURL": "masters/2140e15f-d921-49ce-b858-cb2140356d6c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 17,
+      "parentCode": null,
+      "content": "This tool shall be used to highlight specific objects within the screen image. During playback this object shall be highlighted.",
+      "timestamp": "1499235125152",
+      "date": "05 July 2017 16:12",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2140e15f-d921-49ce-b858-cb2140356d6c",
+      "elementID": "m-Rich_text_209",
+      "canvasURL": "masters/2140e15f-d921-49ce-b858-cb2140356d6c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 18,
+      "parentCode": null,
+      "content": "Mouse click: On drag and drop of this icon display a window to adjust mouse settings.",
+      "timestamp": "1499291871703",
+      "date": "06 July 2017 07:57",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2140e15f-d921-49ce-b858-cb2140356d6c",
+      "elementID": "m-Image_52",
+      "canvasURL": "masters/2140e15f-d921-49ce-b858-cb2140356d6c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 19,
+      "parentCode": null,
+      "content": "Keystrokes: On drag and drop of this tool, display a window for inserting keyboard strokes and settings",
+      "timestamp": "1499291914077",
+      "date": "06 July 2017 07:58",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "m-2140e15f-d921-49ce-b858-cb2140356d6c",
+      "elementID": "m-Image_136",
+      "canvasURL": "masters/2140e15f-d921-49ce-b858-cb2140356d6c",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 20,
+      "parentCode": null,
+      "content": "Mouse move: On drag and drop display windows for manipulating mouse pointer position on the screen",
+      "timestamp": "1499291956486",
+      "date": "06 July 2017 07:59",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-d12245cc-1680-458d-89dd-4f0d7fb22724",
+      "elementID": "s-Image_69",
+      "canvasURL": "screens/d12245cc-1680-458d-89dd-4f0d7fb22724",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 21,
+      "parentCode": null,
+      "content": "Display tools as groups",
+      "timestamp": "1499308966599",
+      "date": "06 July 2017 12:42",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-d12245cc-1680-458d-89dd-4f0d7fb22724",
+      "elementID": "s-Image_72",
+      "canvasURL": "screens/d12245cc-1680-458d-89dd-4f0d7fb22724",
+      "author": "ayo",
+      "authorID" : 21130318,
+      "code": 22,
+      "parentCode": null,
+      "content": "Display all tools in alphabetical order",
+      "timestamp": "1499308995232",
+      "date": "06 July 2017 12:43",
+      "fileName": "",
+      "isRead": true
+    }
+  ]
+}

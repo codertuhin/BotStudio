@@ -1,0 +1,22 @@
+#m-17e15bef-949a-4568-ac32-8a31e4ce4d81 #m-17e15bef-Dynamic_Panel_1 {
+  position: absolute;
+  top: 347px;
+  left: 439px;
+}
+#m-17e15bef-949a-4568-ac32-8a31e4ce4d81 #m-17e15bef-Panel_1 {
+  width: 913px;
+  height: 66px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#m-17e15bef-949a-4568-ac32-8a31e4ce4d81 #m-17e15bef-Panel_1 .verticalalign {
+  vertical-align: top;
+}
+#m-17e15bef-949a-4568-ac32-8a31e4ce4d81.master > #loadMark {
+  width: 1px;
+  visibility: hidden;
+  display: none;
+}

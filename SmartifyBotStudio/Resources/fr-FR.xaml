@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="label_left_most_recent">LE PLUS RÉCENT</system:String>
+    <system:String x:Key="label_right_most_recent">LE PLUS RÉCENT</system:String>
+    <system:String x:Key="Left_Intrusion_Detection_Alarm">Alarme de détection d'intrusion</system:String>
+    <system:String x:Key="Left_Camera_Cover_Alarm">Alarme de couverture de caméra</system:String>
+    <system:String x:Key="Left_Camera_Disconnected_Alarm">Alarme de la caméra déconnectée</system:String>
+    <system:String x:Key="Right_Intrusion_Detection_Alarm">Alarme de détection d'intrusion</system:String>
+    <system:String x:Key="Right_Camera_Cover_Alarm">Alarme de couverture de caméra</system:String>
+    <system:String x:Key="Right_Camera_Disconnected_Alarm">Alarme de la caméra déconnectée</system:String>
+
+    <!-- All StringResources Goes Here -->
+</ResourceDictionary>

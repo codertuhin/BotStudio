@@ -1,0 +1,1142 @@
+﻿<UserControl x:Class="SmartifyBotStudio.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:ctrls="clr-namespace:DevComponents.WPF.Controls;assembly=DevComponents.WPF.Controls"
+             xmlns:local="clr-namespace:SmartifyBotStudio"
+             xmlns:converters="clr-namespace:SmartifyBotStudio.Helpers.Converters"
+              xmlns:jas="clr-namespace:SmartifyBotStudio.Helpers.DragDropListView" 
+             xmlns:dd="clr-namespace:DevComponents.WpfDock;assembly=DevComponents.WpfDock"
+             mc:Ignorable="d"  Name="MainPageControl"
+             d:DesignHeight="800" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="TaskSourceListViewStyle" TargetType="ListView">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+
+
+        </Style>
+
+        <converters:IndexConverter x:Key="IndexConverter" />
+
+
+        <Style x:Key="ItemContStyle" TargetType="ListViewItem">
+            <Style.Resources>
+                <LinearGradientBrush x:Key="MouseOverBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
+                    <GradientStop Color="#22000000" Offset="0" />
+                    <GradientStop Color="#44000000" Offset="0.4" />
+                    <GradientStop Color="#55000000" Offset="0.6" />
+                    <GradientStop Color="#33000000" Offset="0.9" />
+                    <GradientStop Color="#22000000" Offset="1" />
+                </LinearGradientBrush>
+            </Style.Resources>
+            <Setter Property="Padding" Value="0,4" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <!-- The default control template for ListViewItem has a Border 
+           which contains the item's content. -->
+            <Setter Property="Border.BorderThickness" Value="0,0,0,0.5" />
+            <Setter Property="Border.BorderBrush" Value="LightGray" />
+            <!-- These triggers react to changes in the attached properties set
+           during a managed drag-drop operation. -->
+            <Style.Triggers>
+                <Trigger Property="jas:ListViewItemDragState.IsBeingDragged" Value="True">
+                    <Setter Property="FontWeight" Value="DemiBold" />
+                </Trigger>
+                <Trigger Property="jas:ListViewItemDragState.IsUnderDragCursor" Value="True">
+                    <Setter Property="Background" Value="{StaticResource MouseOverBrush}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+
+    <materialDesign:ColorZone Background="#242628"   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch">
+        <DockPanel>
+            <Menu IsMainMenu="True" DockPanel.Dock="Top"   Background="#262626">
+                <MenuItem Height="30" Header="File">
+
+                    <MenuItem Header="Open" Name="mnuOpen" Click="mnuOpen_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="OpenInApp" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+
+                    <MenuItem Header="Save" Name="mnuSave" Click="mnuSave_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentSave" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Exit" Name="mnuExit" Click="mnuExit_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ExitToApp" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+
+                </MenuItem>
+
+                <MenuItem Height="30" Header="Edit">
+
+                </MenuItem>
+
+                <MenuItem Height="30" Header="View">
+
+                </MenuItem>
+
+                <MenuItem Height="30" Header="Options">
+
+                </MenuItem>
+
+                <MenuItem Height="30" Header="Help">
+
+                </MenuItem>
+
+                <MenuItem Height="30" Header="About">
+
+                </MenuItem>
+
+
+            </Menu>
+
+
+
+
+            <dragablz:TabablzControl DockPanel.Dock="Top" VerticalAlignment="Top" Height="120" SelectionChanged="TabablzControl_SelectionChanged" >
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController />
+                </dragablz:TabablzControl.InterTabController>
+                <TabItem Header="Main" IsSelected="True" >
+                    <ToolBarTray>
+                        <ToolBar Style="{DynamicResource MaterialDesignToolBar}" ClipToBounds="False" HorizontalAlignment="Center">
+                            <Button Name="btnNew">
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Cube" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="New"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button Name="btnOpen" Click="btnOpenProject_inBinaryFormat_click">
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Folder" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Open"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button Name="btnSave" Click="btnSaveProject_inBinaryFormat_click">
+                                <StackPanel >
+                                    <materialDesign:PackIcon Kind="ContentSave" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Save"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button Name="btnCopy" Click="btnCopy_click">
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="ContentCopy" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Copy"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnCut" Click="btnCut_Click">
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="ContentCut" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Cut"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button Name="btnUndo" Click="btnUndo_click">
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Undo" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Undo"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Redo" HorizontalAlignment="Center"  Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Redo"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Separator/>
+
+                            <Button x:Name="btnExecute" Click="btnExecute_Click">
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Run" HorizontalAlignment="Center"  Foreground="#FB871F"/>
+                                    <TextBlock Text="Execute"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="CommentProcessing" HorizontalAlignment="Center"  Foreground="#FB871F"/>
+                                    <TextBlock Text="Analyze"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="TableEdit" HorizontalAlignment="Center"  Foreground="#FB871F"/>
+                                    <TextBlock Text="Edit"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Separator/>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="CalendarToday" HorizontalAlignment="Center"  Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Capture a Task"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Video" HorizontalAlignment="Center"  Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Design a Process"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Instapaper" HorizontalAlignment="Center"  Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Build a Task"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Separator/>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Settings" HorizontalAlignment="Center"  Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Settings"  />
+                                </StackPanel>
+                            </Button>
+
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+                <TabItem Header="Debug">
+                    <ToolBarTray>
+                        <ToolBar Style="{DynamicResource MaterialDesignToolBar}" ClipToBounds="False">
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Magnify" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Error"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Link" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Track"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Pause" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Pause"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="History" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Log"  />
+                                </StackPanel>
+                            </Button>
+
+
+
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+
+                <TabItem Header="Configuration">
+                    <ToolBarTray>
+                        <ToolBar Style="{DynamicResource MaterialDesignToolBar}" ClipToBounds="False">
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Security" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Security"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Signal" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Trigger"  />
+                                </StackPanel>
+                            </Button>
+
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Calendar" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Schedule"  />
+                                </StackPanel>
+                            </Button>
+
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+
+                <TabItem Header="Library">
+                    <ToolBarTray>
+                        <ToolBar Style="{DynamicResource MaterialDesignToolBar}" ClipToBounds="False">
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Database" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Library"  />
+                                </StackPanel>
+                            </Button>
+
+
+
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+
+                <TabItem Header="Packages">
+                    <ToolBarTray>
+                        <ToolBar Style="{DynamicResource MaterialDesignToolBar}" ClipToBounds="False">
+                            <Button>
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Package" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+                                    <TextBlock Text="Packge Store"  />
+                                </StackPanel>
+                            </Button>
+
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+            </dragablz:TabablzControl>
+
+
+            <dd:DockSite  LicenseKey="DAD80300DA22" Name="docManager" Margin="4,0,4,0" VisualStyle="Office2016"  DockPanel.Dock="Top">
+                <dd:DockSite.SplitPanels>
+                    <dd:SplitPanel  dd:DockSite.Dock="Right" dd:DockSite.DockSize="250">
+                        <dd:DockWindowGroup>
+
+                            <dd:DockWindow  dd:DockSite.SaveLayout="True"  Header="Properties">
+
+                                <ScrollViewer Grid.Column="4">
+                                    <ctrls:PropertyGrid Name="propertyGrid" IsSelectionFocusAware="False" VisualStyle="Office2010Black" Background="DimGray" Foreground="White">
+
+                                    </ctrls:PropertyGrid>
+                                </ScrollViewer>
+                            </dd:DockWindow>
+
+                            <dd:DockWindow  dd:DockSite.SaveLayout="True"   Header="Variables" >
+                                <ScrollViewer Grid.Column="4">
+                                    <DataGrid  IsReadOnly="True" Margin="10,12,10,61" AutoGenerateColumns="True"  MouseDoubleClick="DataGrid_MouseDoubleClick"  Name="variableGrid" Grid.Row="2" Grid.RowSpan="2" />
+                                </ScrollViewer>
+                            </dd:DockWindow>
+
+
+                            <dd:DockWindow Name="windowProjectExplorer" dd:DockSite.SaveLayout="True"  Header="Functions" >
+                                <ScrollViewer Grid.Column="4">
+                                    <StackPanel>
+                                        <Image Source="Images/char1.jpg" Height="200" Width="200"/>
+                                        <Separator/>
+                                        <Image Source="Images/char2.jpg" Height="200" Width="200"/>
+                                        <Separator/>
+                                        <Image Source="Images/char2.jpg" Height="200" Width="200"/>
+                                        <Separator/>
+                                        <Image Source="Images/char2.jpg" Height="200" Width="200"/>
+                                        <Separator/>
+                                        <Image Source="Images/char2.jpg" Height="200" Width="200"/>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </dd:DockWindow>
+
+
+                        </dd:DockWindowGroup>
+                    </dd:SplitPanel>
+
+                    <dd:SplitPanel dd:DockSite.Dock="Left" dd:DockSite.DockSize="250">
+                        <dd:DockWindowGroup SelectionChanged="DockWindowGroup_SelectionChanged" >
+                            <dd:DockWindow  dd:DockSite.SaveLayout="True" Header="Tasks" x:Name="windowActions" >
+                                <ScrollViewer Grid.Column="0" Background="White">
+
+                                    <StackPanel  Background="Transparent" >
+                                        <StackPanel.Resources>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlock}">
+                                                <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                                <Setter Property="MaxWidth" Value="300"></Setter>
+                                            </Style>
+                                        </StackPanel.Resources>
+                                        <Expander Header="File" HorizontalAlignment="Stretch">
+
+                                            <ListView Name="lstFileActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Conditionals" HorizontalAlignment="Stretch">
+
+                                            <ListView Name="lstConditionalActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Flow Control" HorizontalAlignment="Stretch">
+
+                                            <ListView Name="lstFlowActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Loops" HorizontalAlignment="Stretch">
+
+                                            <ListView Name="lstLoopActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Folder"/>
+                                        <Expander Header="Delay">
+                                            <ListView Name="lstDelayActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Text">
+                                            <ListView Name="lstTextActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Message Boxes">
+                                            <ListView Name="lstMessageBoxActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Compression"/>
+                                        <Expander Header="Clipboard"/>
+                                        <Expander Header="UI/Windows"/>
+                                        <Expander Header="Web Automation">
+                                            <ListView Name="lstWebActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Variable Actions">
+                                            <ListView Name="lstVariableActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="FTP"/>
+                                        <Expander Header="Email">
+                                            <ListView Name="lstEmailActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Cmd Session "/>
+                                        <Expander Header="Database">
+                                            <ListView Name="lstDataBaseActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Mouse and Keyboard">
+                                            <ListView Name="lstMouseAndKeyboardActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="DateTime Actions">
+                                            <ListView Name="lstDateTimeActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+                                        <Expander Header="Excel">
+
+                                            <ListView Name="lstExcelActions" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  
+                                  Margin="4" 
+                                  Padding="2"
+                                  SelectionMode="Single">
+                                                <ListView.Resources>
+                                                    <Style TargetType="GridViewColumnHeader">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                                    </Style>
+
+                                                </ListView.Resources>
+                                                <ListView.View>
+
+                                                    <GridView>
+
+                                                        <GridViewColumn Width="200" >
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="20"/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                                        <StackPanel Grid.Column="1">
+
+                                                                            <TextBlock Text="{Binding Name}"/>
+
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Expander>
+
+                                        <Expander Header="Outlook"/>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </dd:DockWindow>
+                        </dd:DockWindowGroup>
+                    </dd:SplitPanel>
+
+
+
+                    <dd:SplitPanel dd:DockSite.Dock="Bottom"  dd:DockSite.DockSize="150">
+                        <dd:DockWindowGroup dd:SplitPanel.RelativeSize="65,100">
+
+                            <dd:DockWindow Name="windowDebug" dd:DockSite.SaveLayout="True" Header="Debug"  CanClose="True" IsAutoHide="True">
+                                <Grid Name="BottomControlHost" />
+                            </dd:DockWindow>
+
+                            <dd:DockWindow Name="windowOutput" dd:DockSite.SaveLayout="True" Header="Output"  CanClose="True" IsAutoHide="True">
+
+                                <Grid>
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                        <ListBoxItem>
+                                            <StackPanel Name="OutputStackPanel">
+
+                                            </StackPanel>
+                                        </ListBoxItem>
+                                    </ScrollViewer>
+                                </Grid>
+
+                            </dd:DockWindow>
+
+                        </dd:DockWindowGroup>
+                    </dd:SplitPanel>
+
+                </dd:DockSite.SplitPanels>
+
+
+
+                <dd:SplitPanel>
+                    <dd:DockWindowGroup >
+                        <dd:DockWindow Name="windowProjectDesign"  dd:DockSite.SaveLayout="True" dd:DockSite.IsDocument="True" CanClose="False" CanDockLeft="False" CanDockRight="False" CanDockTop="False" CanDockBottom="False" CanFloat="True" Header="Robot Designer"  CloseButtonVisibility="Hidden" CanAutoHide="True">
+                            <ListView Name="listView"   
+          Margin="4" 
+          Padding="2"
+          SelectionMode="Single"
+                 MouseDoubleClick="listView_MouseDoubleClick"       
+          >
+                                <ListView.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem  Header="Delete" FontWeight="Bold" Click="DeleteContextMenu_Click" >
+                                            <MenuItem.Icon>
+                                                <materialDesign:PackIcon Kind="Delete"  HorizontalAlignment="Left" Foreground="#1AC0C1"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Click="Enable_DisableContextMenu_Click" FontWeight="Bold" FontSize="12" Header="Enable / Disable"  />
+                                    </ContextMenu>
+                                </ListView.ContextMenu>
+
+                                <ListView.Resources>
+                                    <Style TargetType="GridViewColumnHeader">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+
+                                    </Style>
+
+                                </ListView.Resources>
+                                <ListView.View>
+
+                                    <GridView x:Name="gridView2">
+
+                                        <!--<GridViewColumn
+          Header="Number" Width="100"
+          DisplayMemberBinding="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                         AncestorType={x:Type ListViewItem}}, 
+                                         Converter={StaticResource IndexConverter}}" />-->
+                                        <GridViewColumn Header="Index" Width="40" >
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Ellipse  Width="20" Height="20">
+                                                            <Ellipse.Resources>
+                                                                <Style TargetType="Ellipse">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger  Binding="{Binding IsActive}" Value="True">
+                                                                            <Setter Property="Fill" Value="Orange"/>
+                                                                        </DataTrigger>
+
+                                                                        <DataTrigger  Binding="{Binding IsActive}" Value="False">
+                                                                            <Setter Property="Fill" Value="Gray"/>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Ellipse.Resources>
+                                                        </Ellipse>
+                                                        <TextBlock Text="{Binding Index}" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                                                    </Grid>
+
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Actions" Width="600">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="20"/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <materialDesign:PackIcon Kind="{Binding Icon}" HorizontalAlignment="Center" Foreground="#1AC0C1"/>
+
+                                                        <StackPanel Grid.Column="1">
+
+                                                            <TextBlock Text="{Binding Name}"/>
+                                                            <TextBlock Text="{Binding Description}"/>
+                                                        </StackPanel>
+
+                                                        <Grid.Resources>
+                                                            <Style TargetType="Grid">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger  Binding="{Binding IsChild}" Value="True">
+                                                                        <Setter  Property="Margin" Value="30,0"/>
+                                                                    </DataTrigger>
+
+                                                                   
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Grid.Resources>
+                                                    </Grid>
+
+
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+
+
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </dd:DockWindow>
+
+                    </dd:DockWindowGroup>
+                </dd:SplitPanel>
+
+
+
+            </dd:DockSite>
+
+
+
+
+
+        </DockPanel>
+
+    </materialDesign:ColorZone>
+</UserControl>

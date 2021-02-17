@@ -1,0 +1,43 @@
+#s-d12245cc-1680-458d-89dd-4f0d7fb22724 > #backgroundBox {
+  background-color: #333333;
+  background-image: none;
+  position: absolute;
+}
+#s-d12245cc-1680-458d-89dd-4f0d7fb22724 > #alignmentBox {
+  position: relative;
+  margin: 0 auto;
+  width: 1366px;
+  min-width: 1366px;
+  min-height: 710px;
+}
+#s-d12245cc-1680-458d-89dd-4f0d7fb22724 #s-Master_item_1 div.offset {
+  position: relative;
+  top: -72px;
+  left: -186px;
+}
+#s-d12245cc-1680-458d-89dd-4f0d7fb22724 #s-Master_item_1 {
+  position: absolute;
+  top: 1px;
+  left: 230px;
+  width: 1141px;
+  height: 670px;
+  overflow: visible;
+}
+#s-d12245cc-1680-458d-89dd-4f0d7fb22724 #s-Master_item_2 div.offset {
+  position: relative;
+  top: -108px;
+  left: -396px;
+}
+#s-d12245cc-1680-458d-89dd-4f0d7fb22724 #s-Master_item_2 {
+  position: absolute;
+  top: 1px;
+  left: 0px;
+  width: 228px;
+  height: 670px;
+  overflow: visible;
+}
+#s-d12245cc-1680-458d-89dd-4f0d7fb22724 > #loadMark {
+  width: 1px;
+  visibility: hidden;
+  display: none;
+}
